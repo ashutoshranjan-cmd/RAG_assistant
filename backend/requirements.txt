@@ -1,0 +1,7 @@
+fastapi
+uvicorn
+pypdf
+faiss-cpu
+google-generativeai
+python-multipart
+pdfplumber
