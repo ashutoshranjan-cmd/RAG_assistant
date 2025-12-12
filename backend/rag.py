@@ -2,8 +2,12 @@ import faiss
 from pypdf import PdfReader
 import google.generativeai as genai
 import numpy as np
+from dotenv import load_dotenv
+import os
 
-genai.configure(api_key="AIzaSyAKz6oBJnxnRoMZ66R4jC3IR4ppJSE4Oic")
+load_dotenv()
+
+genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 
 class PDFProcessor:
     def extract_and_split(self,pdf_path):
@@ -60,3 +64,4 @@ class RAGChat:
         response = self.llm_model.generate_content(prompt)
         return response.text
     
+
